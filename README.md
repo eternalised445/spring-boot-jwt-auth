@@ -11,22 +11,22 @@ A **beginner-friendly**, production-structured **JWT Authentication REST API** b
 
 ---
 
-## ✨ Features
+##  Features
 
 | Feature | Details |
 |---|---|
-| 🔐 **JWT Authentication** | Stateless token-based auth (no sessions) |
-| 🔒 **BCrypt Password Hashing** | Passwords hashed with strength-12 BCrypt |
-| 👤 **User Registration** | Validates uniqueness and saves to DB |
-| 🎫 **User Login** | Returns signed JWT token (24h expiry) |
-| 🛡️ **Protected Endpoint** | JWT filter intercepts and validates token |
-| 🏷️ **Role Support** | Basic role field (USER/ADMIN) on each user |
-| 🗄️ **MySQL + JPA** | Auto table creation via Hibernate DDL |
-| 🧹 **Clean Architecture** | Controller → Service → Repository layers |
+|  **JWT Authentication** | Stateless token-based auth (no sessions) |
+|  **BCrypt Password Hashing** | Passwords hashed with strength-12 BCrypt |
+|  **User Registration** | Validates uniqueness and saves to DB |
+|  **User Login** | Returns signed JWT token (24h expiry) |
+|  **Protected Endpoint** | JWT filter intercepts and validates token |
+|  **Role Support** | Basic role field (USER/ADMIN) on each user |
+|  **MySQL + JPA** | Auto table creation via Hibernate DDL |
+|  **Clean Architecture** | Controller → Service → Repository layers |
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 src/main/java/com/example/auth/
@@ -71,7 +71,7 @@ src/main/java/com/example/auth/
 
 ---
 
-## ⚙️ Prerequisites
+##  Prerequisites
 
 | Tool | Version |
 |---|---|
@@ -81,7 +81,7 @@ src/main/java/com/example/auth/
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### 1. Clone the Repository
 
@@ -116,14 +116,14 @@ mvn spring-boot:run
 
 You should see:
 ```
-✅ Auth Service is up and running on http://localhost:8080
+Auth Service is up and running on http://localhost:8080
 ```
 
 ---
 
-## 📬 API Usage (Postman / curl)
+##  API Usage (Postman / curl)
 
-### 1️⃣ Register a New User
+### 1️1. Register a New User
 
 ```bash
 curl -X POST http://localhost:8080/auth/register \
@@ -143,7 +143,7 @@ Username already exists: john
 
 ---
 
-### 2️⃣ Login and Get JWT Token
+### 2️2. Login and Get JWT Token
 
 ```bash
 curl -X POST http://localhost:8080/auth/login \
@@ -165,7 +165,7 @@ Invalid credentials
 
 ---
 
-### 3️⃣ Access Protected Endpoint
+### 3️3. Access Protected Endpoint
 
 Copy the token from the login response and pass it in the `Authorization` header:
 
@@ -176,7 +176,7 @@ curl http://localhost:8080/auth/test \
 
 **Response `200 OK`:**
 ```
-✅ Hello john! You've accessed a protected endpoint. Your role: [ROLE_USER]
+ Hello john! You've accessed a protected endpoint. Your role: [ROLE_USER]
 ```
 
 **Without token — `403 Forbidden`:**
@@ -186,7 +186,7 @@ curl http://localhost:8080/auth/test \
 
 ---
 
-## 🔑 How JWT Authentication Works
+##  How JWT Authentication Works
 
 ```
 CLIENT                                  SERVER
@@ -209,7 +209,7 @@ CLIENT                                  SERVER
 
 ---
 
-## 🏗️ Architecture Overview
+##  Architecture Overview
 
 ```
 HTTP Request
@@ -257,7 +257,7 @@ jwt.expiration=86400000                 # 24 hours in milliseconds
 
 ---
 
-## 🔒 Security Notes
+##  Security Notes
 
 - **Passwords** are hashed with **BCrypt (strength 12)** — never stored in plain text
 - **JWT Secret** should be stored in environment variables in production (not in source code)
@@ -267,7 +267,7 @@ jwt.expiration=86400000                 # 24 hours in milliseconds
 
 ---
 
-## 💡 Key Concepts (Interview Ready)
+##  Key Concepts (Interview Ready)
 
 | Concept | Explanation |
 |---|---|
@@ -280,7 +280,7 @@ jwt.expiration=86400000                 # 24 hours in milliseconds
 
 ---
 
-## 📦 Dependencies
+##  Dependencies
 
 | Dependency | Purpose |
 |---|---|
@@ -289,21 +289,3 @@ jwt.expiration=86400000                 # 24 hours in milliseconds
 | `spring-boot-starter-data-jpa` | ORM / database abstraction (Hibernate) |
 | `mysql-connector-j` | MySQL JDBC driver |
 | `jjwt-api/impl/jackson` | JWT creation, signing, parsing |
-
----
-
-## 🪪 License
-
-This project is open-source under the [MIT License](LICENSE).
-
----
-
-## 🙋‍♂️ Author
-
-**Aditya Gaikwad**  
-📧 aditya.gaikwad2021@vitbhopal.ac.in  
-🌐 [GitHub](https://github.com/aditya-gaikwad)
-
----
-
-> ⭐ If you found this project helpful for learning Spring Boot & JWT, give it a star!

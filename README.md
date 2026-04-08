@@ -59,7 +59,7 @@ src/main/java/com/example/auth/
 
 ---
 
-## 🌐 API Endpoints
+##  API Endpoints
 
 ### Base URL: `http://localhost:8080`
 
